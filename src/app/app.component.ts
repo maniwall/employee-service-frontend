@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'DempApp';
+  
+  
+// This particular arrow function will be excuted after the mentioned timeout
+    // setTimeout(() => {console.log("Data")}, 1000);
+    // setTimeout(() => {console.log("Data")}, 1000);
+    // console.log("Data");
+   show= false;
+
 }

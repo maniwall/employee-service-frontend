@@ -1,0 +1,12 @@
+// proxy.conf.json
+{
+    "/api": {
+      "target": "http://localhost:8080",      // URL of the backend API
+      "secure": false,                       // Set to 'false' if using HTTP (not HTTPS)
+      "logLevel": "debug",                   // Optional: logs request details for debugging
+      "changeOrigin": true,                  // If true, the `Origin` header will be changed to match the target URL
+      "pathRewrite": {                       // Optional: rewrite paths if needed
+        "^/": ""                          // Remove "/api" from the start of the request path
+      }
+    }
+  }

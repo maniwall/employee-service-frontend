@@ -1,0 +1,75 @@
+<div class="card w-50 mx-auto mt-4">
+    <h4 class="card-header text-center">Sign Up</h4>
+    <div class="card-body">
+        <form action="" (ngSubmit)="createEmployee()" #createEmployeeForm>
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" name="firstname" ngModel #firstname="ngModel" placeholder="Enter First name" required
+                    minlength="3" [(ngModel)]="employee.firstname" />
+                
+                <div *ngIf="firstname.invalid && firstname.touched" class="text-danger">
+                    <div *ngIf="firstname.errors?.['required']">firstname is required.</div>
+                    <div *ngIf="firstname.errors?.['minlength']">firstname of minlength 3 is required.</div>
+                </div> 
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" name="lastname" placeholder="Enter Last name" required
+                    minlength="3" [(ngModel)]="employee.lastname" />
+
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter Email address" required
+                    email [(ngModel)]="employee.email">
+
+            </div>
+            <div class="form-group">
+                <label>DOB</label>
+                <input type="text" class="form-control" name="dob" placeholder="Enter DOB" required
+                    [(ngModel)]="employee.dob">
+
+            </div>
+            <div class="form-group">
+                <label>Mobile</label>
+                <input type="text" class="form-control" name="mobile" placeholder="Enter mobile Number" required
+                    minlength="10" [(ngModel)]="employee.mobile">
+
+            </div>
+            <div class="form-group">
+                <label>Department Name</label>
+                <input type="text" class="form-control" name="departmentName" placeholder="Enter Department name"
+                    required [(ngModel)]="employee.department.name">
+
+            </div>
+            <div class="form-group">
+                <label>Department Sector</label>
+                <input type="text" class="form-control" name="departmentSector"
+                    placeholder="Enter Department Address" [(ngModel)]="employee.department.sector">
+
+            </div>
+            <div class="form-group mt-2">
+                <label>Gender</label>
+                <label><input type="radio" name="gender" required value="MALE" [(ngModel)]="employee.gender"> Male
+                </label>
+                <label><input type="radio" name="gender" required value="FEMALE" [(ngModel)]="employee.gender"> Female
+                </label>
+
+            </div>
+            <!-- <div class="form-control">
+        <label>Employee Address</label>
+        <label>Street</label>
+        <input type="text" name="street" placeholder="Enter Street name"[(ngModel)] = "employee.address.street">
+        
+    </div>
+    <div class="form-control">
+        <label>Zipcode</label>
+        <input type="text" name="zipcode" placeholder="Enter Zipcode" [(ngModel)] = "employee.address.zipcode">
+        
+    </div> -->
+
+            <button class="btn btn-success mt-4">Create</button>
+
+        </form>
+    </div>
+</div>
